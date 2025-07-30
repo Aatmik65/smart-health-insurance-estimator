@@ -99,11 +99,11 @@ def show_premium_estimator():
     with col1:
         st.subheader("Personal Information")
         age = st.slider("Age", 18, 80, 35)
-        sex = st.selectbox("Gender", ["Male", "Female"])
+        sex = st.selectbox("Gender", ["male", "female"])
         bmi = st.number_input("BMI", 15.0, 50.0, 25.0, 0.1)
         children = st.selectbox("Number of Children", [0, 1, 2, 3, 4, 5])
         smoker = st.selectbox("Smoking Status", ["no", "yes"])
-        region = st.selectbox("Region", ["North", "South", "West", "East"])
+        region = st.selectbox("Region", ["southwest", "southeast", "northwest", "northeast"])
     
     with col2:
         st.subheader("Wellness Metrics")
@@ -162,7 +162,7 @@ def show_wellness_dashboard():
     
     with col1:
         st.subheader("Health Metrics Input")
-        bmi = st.slider("Current BMI", 15.0, 50.0, 25.0, 0.1, key="wellness_bmi")
+        bmi = st.number_input("Current BMI", 15.0, 50.0, 25.0, 0.1, key="wellness_bmi")
         exercise_freq = st.slider("Exercise Frequency (days/week)", 0, 7, 3, key="wellness_exercise")
         diet_quality = st.selectbox("Diet Quality", ["Poor", "Fair", "Good", "Excellent"], key="wellness_diet")
         smoker = st.selectbox("Smoking Status", ["no", "yes"], key="wellness_smoker")
@@ -249,10 +249,10 @@ def show_analytics():
             # Premium trend chart
             fig_premium = px.line(df, x='date', y=['base_premium', 'final_premium'], 
                                 title="Premium Trend Over Time",
-                                labels={'value': 'Premium (₹)', 'date': 'Date'})
+                                labels={'value': 'Premium ($)', 'date': 'Date'})
             fig_premium.update_layout(
                 xaxis_title="Date",
-                yaxis_title="Premium (₹)",
+                yaxis_title="Premium ($)",
                 legend_title="Premium Type"
             )
             st.plotly_chart(fig_premium, use_container_width=True, key="analytics_premium_trend")
@@ -324,10 +324,10 @@ def show_analytics():
             display_df,
             column_config={
                 "date": "Date",
-                "base_premium": st.column_config.NumberColumn("Base Premium (₹)", format="$%.2f"),
+                "base_premium": st.column_config.NumberColumn("Base Premium ($)", format="$%.2f"),
                 "wellness_score": "Wellness Score",
                 "discount_percentage": st.column_config.NumberColumn("Discount (%)", format="%.1f%%"),
-                "final_premium": st.column_config.NumberColumn("Final Premium (₹)", format="$%.2f"),
+                "final_premium": st.column_config.NumberColumn("Final Premium ($)", format="$%.2f"),
             },
             use_container_width=True
         )
@@ -386,3 +386,4 @@ def generate_sample_data():
 
 if __name__ == "__main__":
     main()
+    
