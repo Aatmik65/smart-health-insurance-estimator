@@ -23,7 +23,7 @@ st.set_page_config(
 # Initialize session state
 if 'ml_model' not in st.session_state:
     st.session_state.ml_model = InsurancePremiumPredictor()
-    st.session_state.ml_model.train_model()
+    # st.session_state.ml_model.train_model()  # ← Commented to avoid heavy load on app launch
 
 if 'wellness_calc' not in st.session_state:
     st.session_state.wellness_calc = WellnessCalculator()
