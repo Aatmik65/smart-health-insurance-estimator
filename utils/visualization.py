@@ -9,7 +9,7 @@ def create_kpi_cards(base_premium, discount_percentage, final_premium, wellness_
     with col1:
         st.metric(
             label="Base Premium",
-            value=f"${base_premium:,.2f}",
+            value=f"₹{base_premium:,.2f}",
             help="Premium before wellness discount"
         )
     
@@ -24,15 +24,15 @@ def create_kpi_cards(base_premium, discount_percentage, final_premium, wellness_
         st.metric(
             label="Discount",
             value=f"{discount_percentage}%",
-            delta=f"${base_premium * discount_percentage / 100:,.2f} saved",
+            delta=f"₹{base_premium * discount_percentage / 100:,.2f} saved",
             help="Discount based on wellness score"
         )
     
     with col4:
         st.metric(
             label="Final Premium",
-            value=f"${final_premium:,.2f}",
-            delta=f"-${base_premium - final_premium:,.2f}",
+            value=f"₹{final_premium:,.2f}",
+            delta=f"-₹{base_premium - final_premium:,.2f}",
             delta_color="inverse",
             help="Premium after wellness discount"
         )
