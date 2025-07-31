@@ -52,7 +52,8 @@ def check_password():
         return True
 
 def main():
-    col1, col2, col3 = st.columns([1, 3, 1])
+    st.markdown("<br>", unsafe_allow_html=True)
+col1, col2, col3 = st.columns([1, 3, 1])
 with col2:
     logo = Image.open("healsurelogo.png")
     st.image(logo, width=180)
