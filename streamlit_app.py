@@ -14,7 +14,7 @@ from utils.health_tips import get_health_tips
 
 # Page configuration
 st.set_page_config(
-    page_title="Smart Health Insurance Estimator",
+    page_title="page_title='Healsure',
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -51,7 +51,8 @@ def check_password():
         return True
 
 def main():
-    st.title(" Smart Health Insurance Estimator & Wellness Rewards Dashboard")
+    st.title("Welcome to Healsure")
+    st.markdown("### Healusure: Secure your health. Reward your habits.")
     st.markdown("**Created by Aatmik**")
 
     if check_password():
