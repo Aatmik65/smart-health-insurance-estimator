@@ -11,7 +11,6 @@ from ml_model import InsurancePremiumPredictor
 from wellness_calculator import WellnessCalculator
 from utils.visualization import create_kpi_cards, create_wellness_gauge
 from utils.health_tips import get_health_tips
-from PIL import Image
 
 # Page configuration
 st.set_page_config(
@@ -52,11 +51,6 @@ def check_password():
         return True
 
 def main():
-    st.markdown("<br>", unsafe_allow_html=True)
-col1, col2, col3 = st.columns([1, 3, 1])
-with col2:
-    logo = Image.open("healsurelogo.png")
-    st.image(logo, width=180)
     st.title("Welcome to Healsure")
     st.markdown("### Secure your health. Reward your habits.")
     st.markdown("**Created by Aatmik**")
