@@ -15,7 +15,6 @@ from utils.health_tips import get_health_tips
 # Page configuration
 st.set_page_config(
     page_title="Smart Health Insurance Estimator",
-    page_icon="🏥",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -52,7 +51,7 @@ def check_password():
         return True
 
 def main():
-    st.title("🏥 Smart Health Insurance Estimator & Wellness Rewards Dashboard")
+    st.title(" Smart Health Insurance Estimator & Wellness Rewards Dashboard")
     st.markdown("**Created by Aatmik**")
 
     if check_password():
@@ -78,7 +77,7 @@ def show_dashboard():
         show_analytics()
 
 def show_premium_estimator():
-    st.header("📊 Insurance Premium Estimation")
+    st.header(" Insurance Premium Estimation")
 
     col1, col2 = st.columns([1, 1])
 
@@ -132,7 +131,7 @@ def show_premium_estimator():
         })
 
 def show_wellness_dashboard():
-    st.header("💪 Wellness Score Dashboard")
+    st.header(" Wellness Score Dashboard")
 
     col1, col2 = st.columns([1, 1])
 
@@ -164,7 +163,7 @@ def show_wellness_dashboard():
             st.metric(category, f"{score}/20")
 
 def show_health_tips():
-    st.header("🎯 Personalized Health Tips")
+    st.header(" Personalized Health Tips")
 
     tips = get_health_tips()
 
@@ -189,7 +188,7 @@ def show_health_tips():
             st.info(tip)
 
 def show_analytics():
-    st.header("📈 Premium & Wellness Analytics")
+    st.header("Premium & Wellness Analytics")
 
     col_demo, col_clear = st.columns([1, 1])
     with col_demo:
@@ -319,7 +318,7 @@ def generate_sample_data():
             'stress_level': stress_level
         })
 
-    st.success("✅ Sample data generated! Check out the analytics below.")
+    st.success("Sample data generated! Check out the analytics below.")
 
 if __name__ == "__main__":
     main()
