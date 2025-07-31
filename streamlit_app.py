@@ -14,7 +14,7 @@ from utils.health_tips import get_health_tips
 
 # Page configuration
 st.set_page_config(
-    page_title="page_title='Healsure',
+    page_title="Healsure",
     layout="wide",
     initial_sidebar_state="expanded"
 )
