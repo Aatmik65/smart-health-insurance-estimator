@@ -52,7 +52,7 @@ def check_password():
 
 def main():
     st.title("Welcome to Healsure")
-    st.markdown("### Healusure: Secure your health. Reward your habits.")
+    st.markdown("### Secure your health. Reward your habits.")
     st.markdown("**Created by Aatmik**")
 
     if check_password():
